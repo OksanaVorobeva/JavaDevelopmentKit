@@ -25,13 +25,18 @@ public class Map extends JPanel {
     private final int Human_dot = 1;
     private final int AI_dot = 2;
     private final int Empty_dot = 0;
-    private int fieldSizeY = 3;
-    private int fieldSizeX = 3;
+    private int fieldSizeY;
+    private int fieldSizeX;
     private char[][] field;
+    private int panelWidth;
+    private int panelHeight;
+    private int cellHeight;
+    private int cellWidth;
+    private int wLen;
 
     private void initMap() {
-        fieldSizeY = 3;
-        fieldSizeX = 3;
+       // fieldSizeY = 3;
+       // fieldSizeX = 3;
         field = new char[fieldSizeY][fieldSizeX];
         for (int i = 0; i < fieldSizeY; i++) {
             for (int j = 0; j < fieldSizeX; j++) {
@@ -57,11 +62,41 @@ public class Map extends JPanel {
         field[y][x] = AI_dot;
     }
 
-    private int panelWidth;
-    private int panelHeight;
-    private int cellHeight;
-    private int cellWidth;
+  /*  private void aiTurn(){
+        if (turnAIWinCell()) return;
+        if (turnHumanWinCell()) return;
+        int x,y;
+    }
 
+    private boolean turnAIWinCell(){
+        for (int i = 0; i < fieldSizeY; i++) {
+            for (int j = 0; j < fieldSizeX; j++) {
+                if(isEmptyCell(j,i)){
+                    field[i][j]=AI_dot;
+                    if (CheckWin(AI_dot)) return  true;
+                    field[i][j]=Empty_dot;
+                }
+            }
+        }
+        return  false;
+    }
+
+    private boolean turnHumanWinCell(){
+        for (int i = 0; i < fieldSizeY; i++) {
+            for (int j = 0; j < fieldSizeX; j++) {
+                if (isEmptyCell(j,i)){
+                    field[i][j]=Human_dot;
+                    if (CheckWin(Human_dot)){
+                        field[i][j]=Human_dot;
+                        return  true;
+                    }
+                    field[i][j]=Empty_dot;
+                }
+            }
+        }
+        return false;
+    }
+*/
     Map() {
         setBackground(Color.BLACK);
         addMouseListener(new MouseAdapter() {
@@ -74,7 +109,10 @@ public class Map extends JPanel {
     }
 
     void startNewGame(int mode, int fSzX, int fSzY, int wLen) {
+        fieldSizeY=fSzY;
+        fieldSizeX=fSzX;
         System.out.printf("Mode: %d;\nSize: x=%d,y=%d;\nWin Length: %d", mode, fSzX, fSzY, wLen);
+        this.wLen=wLen;
         initMap();
         isGameOver = false;
         isInitialized = true;
@@ -118,15 +156,15 @@ public class Map extends JPanel {
         if(!isInitialized)return;
         panelWidth = getWidth();
         panelHeight = getHeight();
-        cellHeight = panelHeight / 3;
-        cellWidth = panelWidth / 3;
+        cellHeight = panelHeight / fieldSizeY;
+        cellWidth = panelWidth / fieldSizeX;
 
         g.setColor(Color.WHITE);
-        for (int h = 0; h < 3; h++) {
+        for (int h = 0; h < fieldSizeY; h++) {
             int y = h * cellHeight;
             g.drawLine(0, y, panelWidth, y);
         }
-        for (int w = 0; w < 3; w++) {
+        for (int w = 0; w < fieldSizeX; w++) {
             int x = w * cellWidth;
             g.drawLine(x, 0, x, panelHeight);
         }
@@ -182,6 +220,28 @@ public class Map extends JPanel {
         if(field[0][2] == c && field[1][1]==c && field[2][0]==c) return true;
         return false;
     }
+
+    /*private boolean checkLine(int x, int y, int vx,int vy,int len, int c){
+        final int far_x=x+(len-1)*vx;
+        final int far_y=y+(len-1)*vy;
+        if(!isValidCell(far_x,far_y)) return false;
+        for (int i = 0; i < len; i++) {
+            if (field[y+i*vy][x+i*vx]!=c) return false;
+        }
+        return true;
+    }
+
+    private boolean CheckWin(int c){
+        for (int i = 0; i < fieldSizeX; i++) {
+            for (int j = 0; j < fieldSizeY; j++) {
+                if (checkLine(i,j,1,0,winLength,c)) return  true;
+                if (checkLine(i,j,1,1,winLength,c)) return  true;
+                if (checkLine(i,j,0,1,winLength,c)) return  true;
+                if (checkLine(i,j,1,-1,winLength,c)) return  true;
+            }
+        }
+        return false;
+    }*/
     private boolean isMapFill(){
         for (int i = 0; i < fieldSizeY; i++) {
             for (int j = 0; j < fieldSizeX; j++) {
