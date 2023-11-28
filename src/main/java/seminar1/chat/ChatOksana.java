@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.*;
-import java.util.Scanner;
+
 
 public class ChatOksana extends JFrame {
     private static final int WINDOW_HEIGHT = 400;
@@ -26,7 +26,7 @@ public class ChatOksana extends JFrame {
     JTextField txtFieldMessage = new JTextField();
     JTextArea areaMessage = new JTextArea();
     JPanel panServer = new JPanel(new GridLayout(6, 2));
-    JPanel panClient = new JPanel(new GridLayout(5, 1));
+    JPanel panClient = new JPanel(new GridLayout(6, 1));
     String login;
     String password;
     String IP;
@@ -57,8 +57,8 @@ public class ChatOksana extends JFrame {
         btbStart.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               oldMessage=String.valueOf(read());
-               areaMessage.append(oldMessage);
+                oldMessage = String.valueOf(read());
+                areaMessage.append(oldMessage);
             }
         });
 
@@ -113,23 +113,24 @@ public class ChatOksana extends JFrame {
              BufferedReader brr = new BufferedReader(reader)) {
 
             String line = brr.readLine();
-           if (line == null || line.isBlank()) {
+            if (line == null || line.isBlank()) {
                 System.out.println("Log is empty.");
                 return stringBuilder.append("Log is empty.\n");
             }
-            while (line.equals(txtFieldLogin.getText())) {
-                //if (line.contains(txtFieldLogin.getText())) {
-                stringBuilder.append(line);
-                stringBuilder.append("\n");
-                line = brr.readLine();
+            while (line != null) {
+                if (line.contains(txtFieldLogin.getText())) {
+                    stringBuilder.append(line);
+                    stringBuilder.append("\n");
+                    line = brr.readLine();
+                }
             }
             return stringBuilder;
 
         } catch (IOException ioe) {
             System.out.println("Log file is not found: ");
         }
-       // return stringBuilder;
-        return stringBuilder.append("Log file is not found: mmmm");
+
+        return stringBuilder.append("Log file is not found:  ");
     }
 
 
