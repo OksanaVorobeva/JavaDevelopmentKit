@@ -1,8 +1,11 @@
-package lesson2;
+package lesson2.ball;
+
+import lesson2.ball.Interactable;
+import lesson2.ball.MainCanvas;
 
 import java.awt.*;
 
-public abstract class Sprite  implements Interactable{
+public abstract class Sprite  implements Interactable {
     protected float x;
     protected float y;
     protected float halfWidth;

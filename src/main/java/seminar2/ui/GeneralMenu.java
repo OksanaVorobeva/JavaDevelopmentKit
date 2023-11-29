@@ -1,6 +1,8 @@
-package ui;
-package ru.gb.ergakov.UI;
+package seminar2.ui;
 
+
+
+import seminar2.server.Menu;
 
 import javax.swing.*;
 import java.awt.*;
@@ -43,7 +45,7 @@ public class GeneralMenu extends JFrame {
         BTN_SEMINAR_1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Seminar1Menu().sem1Menu();
+                new Menu().sem1Menu();
                 setVisible(false);
             }
         });

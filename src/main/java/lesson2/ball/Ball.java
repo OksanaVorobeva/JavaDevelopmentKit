@@ -1,7 +1,4 @@
-package lesson2;
-
-import lesson2.MainCanvas;
-import lesson2.Sprite;
+package lesson2.ball;
 
 import java.awt.*;
 import java.util.Random;

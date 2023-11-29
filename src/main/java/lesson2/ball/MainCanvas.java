@@ -1,4 +1,6 @@
-package lesson2;
+package lesson2.ball;
+
+import lesson2.ball.CanvasRepaintListener;
 
 import javax.swing.*;
 import java.awt.*;
@@ -6,7 +8,7 @@ import java.awt.*;
 
 public class MainCanvas extends JPanel {
     //private  final MainWindow controller;
-    private final  CanvasRepaintListener controller;
+    private final CanvasRepaintListener controller;
     private long lastFrameTime;
 
 

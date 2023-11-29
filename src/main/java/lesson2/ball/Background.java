@@ -1,7 +1,4 @@
-package lesson2;
-
-import lesson2.Interactable;
-import lesson2.MainCanvas;
+package lesson2.ball;
 
 import java.awt.*;
 

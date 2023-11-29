@@ -1,6 +1,6 @@
 package seminar2.server;
 
-import lesson1.GameWindow;
+import seminar2.ui.GeneralMenu;
 
 import javax.swing.*;
 import java.awt.*;
@@ -56,7 +56,7 @@ public class Menu extends JFrame {
         btnTicTacToe.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new GameWindow();
+              //  new GameWindow();
                 setVisible(false);
             }
         });
@@ -64,7 +64,7 @@ public class Menu extends JFrame {
         btnChat.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Chat();
+               // new Chat();
                 setVisible(false);
             }
         });

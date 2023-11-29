@@ -1,4 +1,4 @@
-package lesson2;
+package lesson2.ball;
 
 public class Main {
     public interface MouseListener{
