@@ -1,2 +1,4 @@
-package lesson2;public class MovingObject {
+package lesson2;
+
+public class MovingObject {
 }

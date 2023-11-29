@@ -3,8 +3,9 @@ package lesson2;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.MouseAdapter;
 
-public class MainWindow extends JFrame {
+public class MainWindow extends JFrame implements CanvasRepaintListener{
     private static final int WINDOW_HEIGHT = 600;
     private static final int WINDOW_WIDTH = 800;
     private static final int WINDOW_POSX = 400;

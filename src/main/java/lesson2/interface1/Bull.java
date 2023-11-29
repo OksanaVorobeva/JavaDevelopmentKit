@@ -1,6 +1,10 @@
-package lesson2;
+package lesson2.interface1;
 
 public interface Bull {
-    void walk();
+    public static final int amount=2;
+    default void walk(){
+        System.out.println("Walks on" + amount +"four hooves");
+    }
+
     void talk();
 }

@@ -1,2 +1,6 @@
-package lesson2.interface2;public class MouseListener {
+package lesson2.interface2;
+
+public interface MouseListener {
+    void mouseUp();
+    void mouseDown();
 }

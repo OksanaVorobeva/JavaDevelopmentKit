@@ -1,8 +1,11 @@
 package lesson2;
 
+import lesson2.Interactable;
+import lesson2.MainCanvas;
+
 import java.awt.*;
 
-public class Background implements Interactable{
+public class Background implements Interactable {
     private float time;
     private static final float AMPLITUDE =255f/2f;
     private Color color;

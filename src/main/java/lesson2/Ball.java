@@ -1,9 +1,12 @@
 package lesson2;
 
+import lesson2.MainCanvas;
+import lesson2.Sprite;
+
 import java.awt.*;
 import java.util.Random;
 
-public class Ball extends Sprite{
+public class Ball extends Sprite {
     private static Random rnd = new Random();
     private final Color color;
     private  float vX;
@@ -26,7 +29,7 @@ public class Ball extends Sprite{
             setLeft(canvas.getLeft());
             vX=-vX;
         }
-        if (getRight()<canvas.getRight()){
+        if (getRight()>canvas.getRight()){
             setRight(canvas.getRight());
             vX=-vX;
         }

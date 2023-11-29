@@ -1,6 +1,8 @@
-package lesson2;
+package lesson2.interface1;
 
 public interface Human {
-    public void walk();
+    default void walk() {
+        System.out.println("Walks on two feet");
+    }
     public void talk();
 }

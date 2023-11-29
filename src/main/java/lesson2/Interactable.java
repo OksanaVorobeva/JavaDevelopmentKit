@@ -1,2 +1,8 @@
-package lesson2.interface1;public interface Interactable {
+package lesson2;
+
+import java.awt.*;
+
+public interface Interactable {
+    void update(MainCanvas canvas, float deltaTime);
+    void render(MainCanvas canvas, Graphics g);
 }
