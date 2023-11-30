@@ -7,5 +7,6 @@ package seminar2.developer;
 Реализовать класс фулстэк разработчика, создать экземпляр и последовательно вызвать
 все его методы.
  */
-abstract class Developer {
+public interface Developer {
+    String getName();
 }

@@ -1,4 +1,4 @@
-package seminar2.ui;
+package seminar2.server.ui;
 
 
 
@@ -45,7 +45,7 @@ public class GeneralMenu extends JFrame {
         BTN_SEMINAR_1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                new Menu().sem1Menu();
+                new Menu().Menu();
                 setVisible(false);
             }
         });

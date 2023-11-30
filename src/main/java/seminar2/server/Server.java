@@ -23,7 +23,6 @@ public class Server implements ServerListener{
         } else {
             listener.messageRes("Сеоевер запущен");
         }
-
     }
 
     public void stop() {
@@ -33,9 +32,7 @@ public class Server implements ServerListener{
         } else {
             listener.messageRes("Сеоевер не запущен");
         }
-
     }
-
 
     @Override
     public void serverListener(boolean status) {

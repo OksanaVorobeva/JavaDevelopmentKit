@@ -1,6 +1,6 @@
 package seminar2.server;
 
-import seminar2.ui.GeneralMenu;
+import seminar2.server.ui.GeneralMenu;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,7 +19,7 @@ public class Menu extends JFrame {
     JButton btnBack = new JButton("Come back to General menu");
     JButton btnExit = new JButton("Exit program");
 
-    public void sem1Menu (){
+    public void Menu (){
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocation(WINDOW_POS_X, WINDOW_POS_Y);
         setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
@@ -56,7 +56,7 @@ public class Menu extends JFrame {
         btnTicTacToe.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              //  new GameWindow();
+              new GameWindow();
                 setVisible(false);
             }
         });
@@ -64,7 +64,7 @@ public class Menu extends JFrame {
         btnChat.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               // new Chat();
+               new  ChatOksana();
                 setVisible(false);
             }
         });

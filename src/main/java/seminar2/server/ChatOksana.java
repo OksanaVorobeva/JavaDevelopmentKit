@@ -1,4 +1,4 @@
-package seminar1.chat;
+package seminar2.server;
 
 import javax.swing.*;
 import java.awt.*;
