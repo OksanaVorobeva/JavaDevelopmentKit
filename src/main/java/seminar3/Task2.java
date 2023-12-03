@@ -26,12 +26,13 @@ public class Task2 {
             arr[count++] = item;
         }
 
-        /*T remove() {
+        T remove() {
             if (count == 0) throw new NoSuchElementException();
-            T temp = (T) arr[--count];
-            arr[count] == null;
+            count--;
+            T temp = (T) arr[count];
+            arr[count] = null;
             return temp;
-        }*/
+        }
         @Override
         public String toString() {
             return Arrays.toString(arr);
