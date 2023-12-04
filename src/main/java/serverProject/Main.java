@@ -1,6 +1,8 @@
-package seminar1Kostik;
+package serverProject;
 
 
+import serverProject.client.ui.ClientGUI;
+import serverProject.server.ui.ServerWindow;
 
 public class Main {
     public static void main(String[] args) {
