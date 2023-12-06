@@ -20,15 +20,18 @@ public class Task2<T> {
     }
 
     boolean compare(T[] array, T[] array1) {
-
-        if (Arrays.equals(array, array1)) return true;
-        else return false;
+        if (array.length != array1.length) {
+            return false;
+        }
+        if (!Arrays.equals(array, array1)) {
+            return false;
+        }
+        return true;
     }
-
 
     public static void main(String[] args) {
 
-        Task2 <Number>task2 = new Task2();
+        Task2<Number> task2 = new Task2();
 
         Number[] arr = new Number[3];
         arr[0] = 1;
