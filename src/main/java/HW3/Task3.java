@@ -34,7 +34,7 @@ public class Task3<K, V> {
         Task3<Integer, String> kvBox = new Task3<>(1, "Hello");
         Task3<Integer, String> kvBox1 = new Task3<>(2, "Hello");
         System.out.println(kvBox);
-        System.out.println(kvBox);
+        System.out.println(kvBox1);
     }
 }
 
