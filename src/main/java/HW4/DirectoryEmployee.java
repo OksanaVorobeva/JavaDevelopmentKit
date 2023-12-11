@@ -6,28 +6,29 @@ import java.util.List;
 public class DirectoryEmployee {
 
     List<Employee> employees;
+
     public DirectoryEmployee() {
-        this.employees  = new ArrayList<>();
+        this.employees = new ArrayList<>();
     }
 
-    public void addEmployee(Employee employee){
+    public void addEmployee(Employee employee) {
         employees.add(employee);
     }
 
-    public String getInfo(){
+    public String getInfo() {
         StringBuilder listEmployee = new StringBuilder();
 
-        for (Employee employee: employees){
+        for (Employee employee : employees) {
             listEmployee.append(employee);
             listEmployee.append("\n");
         }
         return listEmployee.toString();
     }
 
-    public String numberSearch(String name){
-        StringBuilder listInfo=new StringBuilder();
-        for (Employee employee: employees){
-            if (employee.getName().contains(name)){
+    public String numberSearch(String name) {
+        StringBuilder listInfo = new StringBuilder();
+        for (Employee employee : employees) {
+            if (employee.getName().contains(name)) {
                 listInfo.append(employee.getName());
                 listInfo.append(" ");
                 listInfo.append(employee.getPhoneNumber());
@@ -37,10 +38,11 @@ public class DirectoryEmployee {
         return listInfo.toString();
     }
 
-    public String experienceSearch(int experience){
-        StringBuilder listInfo=new StringBuilder();
-        for (Employee employee: employees){
-            if (employee.getExperience()==experience){
+
+    public String experienceSearch(int experience) {
+        StringBuilder listInfo = new StringBuilder();
+        for (Employee employee : employees) {
+            if (employee.getExperience() == experience) {
                 listInfo.append(employee.getName());
                 listInfo.append(" ");
                 listInfo.append(employee.getExperience());
@@ -50,10 +52,10 @@ public class DirectoryEmployee {
         return listInfo.toString();
     }
 
-    public String personnelNumberSearch(int personnelNumber){
-        StringBuilder listInfo=new StringBuilder();
-        for (Employee employee: employees){
-            if (employee.getPersonnelNumber()==personnelNumber){
+    public String personnelNumberSearch(int personnelNumber) {
+        StringBuilder listInfo = new StringBuilder();
+        for (Employee employee : employees) {
+            if (employee.getPersonnelNumber() == personnelNumber) {
                 listInfo.append(employee.getName());
                 listInfo.append(" ");
                 listInfo.append(employee.getPersonnelNumber());
@@ -63,3 +65,4 @@ public class DirectoryEmployee {
         return listInfo.toString();
     }
 }
+
